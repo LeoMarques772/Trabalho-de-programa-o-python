@@ -1,0 +1,112 @@
+print("== Clickbook ==")
+import getpass
+import json
+
+def gravar_arquivo(arquivo, dados):
+    jason_str = json.dumps(dados)
+
+    with open("arquivo.json", "w", encoding = "utf-8") as arquivo:
+        arquivo.write(json_str)
+        arquivo.close()
+        
+def ler_arquivo(arquivo):
+    with open("arquivo.json", "r", encoding = "utf-8") as arquivo:
+        dados = json.load(arquivo)
+        return dados
+
+def ler_arquivo_desestruturado(arquivo):
+    with open("arquivo.json", "r", encoding = "utf-8") as arquivo:
+        dados = json.load(arquivo)
+        return dados
+
+def menu():
+    print("Bem vindo! Faça seu login")
+    print("1. Login")
+    print("2. Cadastro")
+    print("3. Cursos Disponíveis")
+    print("4. Informações de segurança")
+    print("5. Sair")
+    escolha = input("Escolha uma opção:")
+
+    return escolha
+
+
+def login():
+    print("Fazer Login;")
+    print("Gravando arquivo com dados em formato JSON")
+    gravar_arquivo("arquivo.json", {"title":"login"})
+    input("Nome de Usuario: ")
+    senha = getpass.getpass("Senha: ")
+    print("Você está logado")
+    print("== Cursos disponíveis: ==")
+    print("1. Programação Python")
+    print("2.C++")
+    print("3. Machine Learning")
+    print("4. Java Script")
+    escolha = input("Escolha um curso:")
+    print("Parabéns pela sua escolha!")
+    
+    return escolha
+    
+
+
+def cadastro():
+    print("Realizar Cadastro")
+    input("Nome de Usuário: ")
+    input("Email: ")
+    senha = getpass.getpass("Senha: ")
+    print("Cadastrados com sucesso!")
+    print("A sua segurança e privacidade são prioridades para nós.\nNosso compromisso é garantir a proteção dos seus dados pessoais e a conformidade com a Lei Geral de Proteção de Dados (LGPD - Lei nº 13.709/2018), assegurando que todas as informações sejam tratadas de forma ética, segura e transparente.")
+    print("Proteção dos seus dados \nAdotamos práticas rigorosas de segurança da informação para proteger os seus dados contra acessos não autorizados, perda, alteração ou qualquer tipo de uso indevido. Entre as principais medidas adotadas, destacamos: \nCriptografia de Dados: Suas informações são armazenadas de forma segura e protegidas por criptografia. \nAcesso Restrito: Apenas pessoas autorizadas têm permissão para acessar seus dados, seguindo rígidas políticas de controle.\nMonitoramento e Auditoria: Realizamos auditorias regulares para identificar e corrigir possíveis vulnerabilidades. \nAmbiente Seguro: Utilizamos servidores e sistemas que seguem padrões internacionais de segurança.\nSeus direitos e privacidade\nDe acordo com a LGPD, você tem o direito de:\nAcessar seus dados pessoais coletados por nossa plataforma.\nSolicitar a correção ou atualização de informações incorretas.\nSolicitar a exclusão dos seus dados, respeitando as obrigações legais aplicáveis.\nRevogar o consentimento para o uso de determinadas informações.\nPara exercer seus direitos, entre em contato com nossa equipe de suporte através dos canais oficiais disponíveis no aplicativo.\nBoas práticas para sua segurança\nAlém das medidas que adotamos, recomendamos que você também siga algumas boas práticas para proteger sua conta e sua privacidade:\nUse senhas fortes e não compartilhe suas credenciais com terceiros.\nAtive a autenticação em duas etapas, se disponível.\nMantenha seu dispositivo atualizado e protegido contra malwares.\nDesconfie de e-mails e links suspeitos que solicitem suas informações pessoais.\nEvite acessar sua conta em dispositivos públicos ou redes Wi-Fi não seguras.")
+    input("li e concordo:")
+    print("== Cursos disponíveis: ==")
+    print("1. Programação Python")
+    print("2.C++")
+    print("3. Machine Learning")
+    print("4. Java Script")
+    escolha = input("Escolha um curso:")
+    print("Parabéns pela sua escolha!")
+    
+
+    return escolha
+
+
+def cursos():
+    print("== Cursos disponíveis: ==")
+    print("1. Programação Python")
+    print("2.C++")
+    print("3. Machine Learning")
+    print("4. Java Script")
+    escolha = input("Escolha um curso:")
+    
+
+    return escolha
+    
+def informaçoes_de_segurança():
+    print("A sua segurança e privacidade são prioridades para nós.\nNosso compromisso é garantir a proteção dos seus dados pessoais e a conformidade com a Lei Geral de Proteção de Dados (LGPD - Lei nº 13.709/2018), assegurando que todas as informações sejam tratadas de forma ética, segura e transparente.")
+    print("Proteção dos seus dados \nAdotamos práticas rigorosas de segurança da informação para proteger os seus dados contra acessos não autorizados, perda, alteração ou qualquer tipo de uso indevido. Entre as principais medidas adotadas, destacamos: \nCriptografia de Dados: Suas informações são armazenadas de forma segura e protegidas por criptografia. \nAcesso Restrito: Apenas pessoas autorizadas têm permissão para acessar seus dados, seguindo rígidas políticas de controle.\nMonitoramento e Auditoria: Realizamos auditorias regulares para identificar e corrigir possíveis vulnerabilidades. \nAmbiente Seguro: Utilizamos servidores e sistemas que seguem padrões internacionais de segurança.\nSeus direitos e privacidade\nDe acordo com a LGPD, você tem o direito de:\nAcessar seus dados pessoais coletados por nossa plataforma.\nSolicitar a correção ou atualização de informações incorretas.\nSolicitar a exclusão dos seus dados, respeitando as obrigações legais aplicáveis.\nRevogar o consentimento para o uso de determinadas informações.\nPara exercer seus direitos, entre em contato com nossa equipe de suporte através dos canais oficiais disponíveis no aplicativo.\nBoas práticas para sua segurança\nAlém das medidas que adotamos, recomendamos que você também siga algumas boas práticas para proteger sua conta e sua privacidade:\nUse senhas fortes e não compartilhe suas credenciais com terceiros.\nAtive a autenticação em duas etapas, se disponível.\nMantenha seu dispositivo atualizado e protegido contra malwares.\nDesconfie de e-mails e links suspeitos que solicitem suas informações pessoais.\nEvite acessar sua conta em dispositivos públicos ou redes Wi-Fi não seguras.")
+    input("Li e concordo: ")
+    
+
+def main():
+    while True:
+        escolha = menu()
+
+        if escolha == "1":
+            login()
+        elif escolha == "2":
+            cadastro()
+        elif escolha == "3":
+            cursos()
+        elif escolha == "4":
+            informaçoes_de_segurança()
+        elif escolha == "5":
+            print("Saindo...")
+            break
+        else:
+            print("Opção invalida. Tente novamente")    
+
+
+
+if __name__=="__main__":
+    main()       
